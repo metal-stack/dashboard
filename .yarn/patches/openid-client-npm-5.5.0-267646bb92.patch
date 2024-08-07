@@ -1,0 +1,18 @@
+diff --git a/lib/client.js b/lib/client.js
+index 069f9b56d201be5884d227cbe3227ea45d457218..fba1763d52d88229f1fb669a380610432a8d9f6a 100644
+--- a/lib/client.js
++++ b/lib/client.js
+@@ -965,13 +965,6 @@ class BaseClient {
+
+     if (payload.aud !== undefined) {
+       if (Array.isArray(payload.aud)) {
+-        if (payload.aud.length > 1 && !payload.azp) {
+-          throw new RPError({
+-            message: 'missing required JWT property azp',
+-            jwt,
+-          });
+-        }
+-
+         if (!payload.aud.includes(this.client_id)) {
+           throw new RPError({
+             printf: [

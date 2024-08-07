@@ -1262,7 +1262,7 @@ const RAW_RUNTIME_STATE =
           ["morgan", "npm:1.10.0"],\
           ["object-hash", "npm:3.0.0"],\
           ["openapi-types", "npm:12.1.3"],\
-          ["openid-client", "npm:5.5.0"],\
+          ["openid-client", "patch:openid-client@npm%3A5.5.0#~/.yarn/patches/openid-client-npm-5.5.0-267646bb92.patch::version=5.5.0&hash=2ccefc"],\
           ["p-event", "npm:4.2.0"],\
           ["p-limit", "npm:3.1.0"],\
           ["p-retry", "npm:4.6.2"],\
@@ -9393,10 +9393,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["openid-client", [\
-      ["npm:5.5.0", {\
-        "packageLocation": "./.yarn/cache/openid-client-npm-5.5.0-267646bb92-b5db8fd784.zip/node_modules/openid-client/",\
+      ["patch:openid-client@npm%3A5.5.0#~/.yarn/patches/openid-client-npm-5.5.0-267646bb92.patch::version=5.5.0&hash=2ccefc", {\
+        "packageLocation": "./.yarn/cache/openid-client-patch-1ed354d879-ecf694eeab.zip/node_modules/openid-client/",\
         "packageDependencies": [\
-          ["openid-client", "npm:5.5.0"],\
+          ["openid-client", "patch:openid-client@npm%3A5.5.0#~/.yarn/patches/openid-client-npm-5.5.0-267646bb92.patch::version=5.5.0&hash=2ccefc"],\
           ["jose", "npm:4.14.6"],\
           ["lru-cache", "npm:6.0.0"],\
           ["object-hash", "npm:2.2.0"],\
