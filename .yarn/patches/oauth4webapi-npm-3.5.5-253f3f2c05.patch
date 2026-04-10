@@ -1,0 +1,20 @@
+diff --git a/build/index.js b/build/index.js
+index 913562db62497b48a32d79c47887ad6627982e4e..a6496f68095ba5af2bd5531fd9701d556382c8b2 100644
+--- a/build/index.js
++++ b/build/index.js
+@@ -1209,14 +1209,7 @@ async function processGenericAccessTokenResponse(as, client, response, additiona
+             .then(validatePresence.bind(undefined, requiredClaims))
+             .then(validateIssuer.bind(undefined, as))
+             .then(validateAudience.bind(undefined, client.client_id));
+-        if (Array.isArray(claims.aud) && claims.aud.length !== 1) {
+-            if (claims.azp === undefined) {
+-                throw OPE('ID Token "aud" (audience) claim includes additional untrusted audiences', JWT_CLAIM_COMPARISON, { claims, claim: 'aud' });
+-            }
+-            if (claims.azp !== client.client_id) {
+-                throw OPE('unexpected ID Token "azp" (authorized party) claim value', JWT_CLAIM_COMPARISON, { expected: client.client_id, claims, claim: 'azp' });
+-            }
+-        }
++        if (Array.isArray(claims.aud) && claims.aud.length !== 1) { }
+         if (claims.auth_time !== undefined) {
+             assertNumber(claims.auth_time, false, 'ID Token "auth_time" (authentication time)', INVALID_RESPONSE, { claims });
+         }

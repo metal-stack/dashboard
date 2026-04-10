@@ -11439,10 +11439,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["oauth4webapi", [\
-      ["npm:3.5.5", {\
-        "packageLocation": "./.yarn/cache/oauth4webapi-npm-3.5.5-253f3f2c05-3ab9bcfa0d.zip/node_modules/oauth4webapi/",\
+      ["patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch::version=3.5.5&hash=b5602a", {\
+        "packageLocation": "./.yarn/cache/oauth4webapi-patch-f936e3a86f-369b1c2d97.zip/node_modules/oauth4webapi/",\
         "packageDependencies": [\
-          ["oauth4webapi", "npm:3.5.5"]\
+          ["oauth4webapi", "patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch::version=3.5.5&hash=b5602a"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -11622,7 +11622,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/openid-client-npm-6.6.2-b0cf019648-1b479494ce.zip/node_modules/openid-client/",\
         "packageDependencies": [\
           ["jose", "npm:6.0.11"],\
-          ["oauth4webapi", "npm:3.5.5"],\
+          ["oauth4webapi", "patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch::version=3.5.5&hash=b5602a"],\
           ["openid-client", "npm:6.6.2"]\
         ],\
         "linkType": "HARD"\

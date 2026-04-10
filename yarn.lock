@@ -8812,10 +8812,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oauth4webapi@npm:^3.5.4":
+"oauth4webapi@npm:3.5.5":
   version: 3.5.5
   resolution: "oauth4webapi@npm:3.5.5"
   checksum: 10c0/3ab9bcfa0d13818b350c1046012bf7fe43f50ea44c49ad107300f5c3b3e8b914f6f862d3d2419336f7362efc09fc7f73252b8214ce3710b2c4e9f96314d1aac3
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch":
+  version: 3.5.5
+  resolution: "oauth4webapi@patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch::version=3.5.5&hash=b5602a"
+  checksum: 10c0/369b1c2d9759720fa225fd30d922caf90a32b67d93d26f1146018c9eb0dfc33bf26b123689277d1aa761763ea8a3c71c1b4f8647c32a2fe98c7c9c806ae008d6
   languageName: node
   linkType: hard
 

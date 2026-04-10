@@ -6,6 +6,7 @@
 !.yarn/releases
 !.yarn/plugins
 !.yarn/versions
+!.yarn/patches
 !.yarnrc.yml
 !.pnp.cjs
 !.pnp.loader.mjs
