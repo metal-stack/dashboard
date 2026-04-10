@@ -52,6 +52,6 @@
     "node": "^22.7.0"
   },
   "resolutions": {
-    "oauth4webapi": "patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch"
+    "oauth4webapi@npm:^3.5.4": "patch:oauth4webapi@npm%3A3.5.5#~/.yarn/patches/oauth4webapi-npm-3.5.5-253f3f2c05.patch"
   }
 }
