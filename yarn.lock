@@ -7826,10 +7826,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"oauth4webapi@npm:^3.8.5":
+"oauth4webapi@npm:3.8.5":
   version: 3.8.5
   resolution: "oauth4webapi@npm:3.8.5"
   checksum: 10c0/688142b30f2243813721bfa4ab879aa0056636b19a3d7964d46b11b967199ab8f74f3771225f71ec766821d410add950475cf1afcfe26a9640cd1c0a1de8e423
+  languageName: node
+  linkType: hard
+
+"oauth4webapi@patch:oauth4webapi@npm%3A3.8.5#~/.yarn/patches/oauth4webapi-npm-3.8.5-bf0acc7b7b.patch":
+  version: 3.8.5
+  resolution: "oauth4webapi@patch:oauth4webapi@npm%3A3.8.5#~/.yarn/patches/oauth4webapi-npm-3.8.5-bf0acc7b7b.patch::version=3.8.5&hash=dc63a2"
+  checksum: 10c0/3843e451b5e3e8437b6693be40c49c926e2cc8e65aa7a6eaee17aea18cb9fdf94c6cd4702dec04490c9e8a157c69f2cc95dd484ae1c08b9b2b1ac8ceef296e2a
   languageName: node
   linkType: hard
 
