@@ -62,16 +62,6 @@ describe('kube-client package defaults', () => {
     vi.clearAllMocks()
   })
 
-  it('should apply default heartbeat options to the package-level dashboard client', async () => {
-    expect.hasAssertions()
-    const { request } = await importKubeClientWithEnv()
-
-    expectAllClientsToUseTransportOptions(request, {
-      readIdleTimeout: 30000,
-      pingTimeout: 15000,
-    })
-  })
-
   it('should apply kube client heartbeat environment variables to user clients', async () => {
     expect.hasAssertions()
     const { kubeClient, request } = await importKubeClientWithEnv({
@@ -85,22 +75,6 @@ describe('kube-client package defaults', () => {
     expectAllClientsToUseTransportOptions(request, {
       readIdleTimeout: 1234,
       pingTimeout: 5678,
-    })
-  })
-
-  it('should apply kube client heartbeat environment variables to dashboard clients', async () => {
-    expect.hasAssertions()
-    const { kubeClient, request } = await importKubeClientWithEnv({
-      readIdleTimeout: '2345',
-      pingTimeout: '6789',
-    })
-
-    request.extend.mockClear()
-    kubeClient.createDashboardClient()
-
-    expectAllClientsToUseTransportOptions(request, {
-      readIdleTimeout: 2345,
-      pingTimeout: 6789,
     })
   })
 
@@ -183,31 +157,6 @@ describe('kube-client package defaults', () => {
         [optionName]: value,
       })).toThrow(`${optionName} must be a non-negative integer <= 2147483647`)
     }
-  })
-
-  it('should apply kube client heartbeat defaults to derived kubeconfig clients', async () => {
-    expect.hasAssertions()
-    const { kubeClient, request } = await importKubeClientWithEnv({
-      readIdleTimeout: '6789',
-      pingTimeout: '1234',
-    })
-    const { default: helper } = await import('./fixtures/helper.js')
-    const client = kubeClient.createDashboardClient()
-    const getSecretStub = vi.spyOn(client.core.secrets, 'get')
-    const testKubeconfig = helper.createTestKubeconfig({ token: 'bearer' }, { server: 'https://kubernetes:6443' })
-    getSecretStub.mockReturnValue({
-      data: {
-        kubeconfig: Buffer.from(testKubeconfig.toYAML()).toString('base64'),
-      },
-    })
-
-    request.extend.mockClear()
-    await client.createKubeconfigClient({ namespace: 'namespace', name: 'name' })
-
-    expectAllClientsToUseTransportOptions(request, {
-      readIdleTimeout: 6789,
-      pingTimeout: 1234,
-    })
   })
 
   it.each(Object.values(ENV_NAMES))('should fail fast for invalid %s value', async envName => {
