@@ -33,7 +33,6 @@ WORKDIR /app
 COPY . .
 
 # validate zero-installs project and disable network
-RUN yarn config set enableNetwork false
 RUN YARN_ENABLE_SCRIPTS=0 yarn install --immutable --immutable-cache
 
 ############# node-scratch #############
