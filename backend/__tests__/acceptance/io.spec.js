@@ -205,37 +205,6 @@ describe('api', function () {
         mockRequest.mockClear()
       })
 
-      it('should subscribe shoots for a single cluster', async function () {
-        mockRequest.mockImplementationOnce(fixtures.auth.mocks.reviewSelfSubjectAccess())
-
-        await subscribe(socket, 'shoots', { namespace: 'garden-foo', name: 'fooShoot' })
-
-        expect(mockRequest).toHaveBeenCalledTimes(1)
-        expect(mockRequest.mock.calls).toMatchSnapshot()
-
-        expect(getRooms(socket, nsp)).toEqual(new Set([
-          ...defaultRooms,
-          'seeds',
-          'shoots;garden-foo/fooShoot',
-        ]))
-
-        args = [
-          socket,
-          nsp.to('shoots;garden-foo/fooShoot'),
-          'shoots',
-          { namespace: 'garden-foo', name: 'fooShoot' },
-        ]
-        await expect(publishEvent(...args)).resolves.toEqual(args[3])
-
-        args = [
-          socket,
-          nsp.to('shoots;garden-foo/barShoot'),
-          'shoots',
-          { namespace: 'garden-foo', name: 'barShoot' },
-        ]
-        await expect(publishEvent(...args)).resolves.toBeUndefined()
-      })
-
       it('should subscribe shoots for a single namespace', async function () {
         mockRequest.mockImplementationOnce(fixtures.auth.mocks.reviewSelfSubjectAccess())
 
