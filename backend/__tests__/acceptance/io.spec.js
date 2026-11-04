@@ -28,23 +28,6 @@ import ioHelper from '../../lib/io/helper.js'
 
 const { mockRequest } = request
 
-function publishEvent (socket, room, eventName, metadata) {
-  const data = { object: { metadata } }
-  const promise = new Promise(resolve => {
-    const timeoutId = setTimeout(() => {
-      socket.off(eventName)
-      resolve()
-    }, 10)
-    const listener = e => {
-      clearTimeout(timeoutId)
-      resolve(e.object.metadata)
-    }
-    socket.once(eventName, listener)
-  })
-  room.emit(eventName, data)
-  return promise
-}
-
 function getRooms (socket, nsp) {
   return nsp.sockets.get(socket.id).rooms
 }
@@ -182,7 +165,6 @@ describe('api', function () {
         id: username,
       })
       let defaultRooms
-      let args
 
       beforeEach(async () => {
         // authorization check for `canListProjects`, `canListSeeds`,
